@@ -1,13 +1,13 @@
 <div class="container col-6">
   <form action="/filter">
     <div class="form-group">
-      <select class="form-control form-control-lg" id="filter" name="filter" value="All">
-        <option value="All">All</option>
-        <option value="家居物業">家居物業</option>
-        <option value="交通出行">交通出行</option>
-        <option value="休閒娛樂">休閒娛樂</option>
-        <option value="餐飲食品">餐飲食品</option>
-        <option value="其他">其他</option>
+      <select class="form-control form-control-lg" id="filter" name="filter" onchange="submit()" selected="{{filter}}">
+        <option value="ALL" {{#ifEquals filter "家居物業"}} selected {{/ifEquals}}>ALL</option>
+        <option value="家居物業" {{#ifEquals filter "家居物業"}} selected {{/ifEquals}}>家居物業</option>
+        <option value="交通出行" {{#ifEquals filter "交通出行"}} selected {{/ifEquals}}>交通出行</option>
+        <option value="休閒娛樂" {{#ifEquals filter "休閒娛樂"}} selected {{/ifEquals}}>休閒娛樂</option>
+        <option value="餐飲食品" {{#ifEquals filter "餐飲食品"}} selected {{/ifEquals}}>餐飲食品</option>
+        <option value="其他" {{#ifEquals filter "其他"}} selected {{/ifEquals}}>其他</option>
       </select>
     </div>
   </form>

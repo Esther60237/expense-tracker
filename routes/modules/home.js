@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
         totalAmount += records[i].amount
       }
       totalAmount = numeral(totalAmount).format('0,0')
+
       res.render('index', { records, totalAmount })
     })
     .catch(error => console.error(error))
