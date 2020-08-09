@@ -1,7 +1,7 @@
 <div class="container col-6">
   <form>
     <div class="form-group">
-      <select class="form-control" id="category">
+      <select class="form-control form-control-lg" id="category">
         <option>類別</option>
         <option value="家居物業">家居物業</option>
         <option value="交通出行">交通出行</option>
@@ -11,29 +11,27 @@
       </select>
     </div>
   </form>
-  <div class="row mb-3">
-    <h5 class="col-auto mr-auto">Total</h5>
-    <h1 class="col-auto totalAmount">{{{totalAmount}}}</h1>
+  <div class="row my-3">
+    <h5 class="col-auto mr-auto" style="color: #519D9E; font-weight: bold;">Total</h5>
+    <h1 class="col-auto totalAmount" style="color: #519D9E; font-weight: bold;">{{{totalAmount}}}</h1>
   </div>
   <div class="content mb-3">
     <ul class="list-group">
       {{#each records}}
       <li class="list-group-item">
         <div class="row">
-          <div class="col-auto"><i class='{{ this.categoryIcon }}'></i>
+          <div class="col-1"><i class='{{ this.categoryIcon }}' style="color: #9055A2;"></i>
           </div>
           <div class="col-auto">
-            <h4 style="display: inline; vertical-align: middle;">{{ this.name }}</h4>
-          </div>
-          <div class="col-auto">
-            <h6 style="display: inline; vertical-align: -0.5em; color: #e0e0eb;">{{ this.date }}</h4>
+            <h3 class="mr-1" style="display: inline; vertical-align: middle; color: #566270;">{{ this.name }}</h4>
+              <small style="display: inline; vertical-align: -0.5em; color: #e0e0eb;">{{ this.date }}</small>
           </div>
           <div class="col-auto ml-auto row">
-            <h3 class="col-auto">{{ this.amount }}</h3>
-            <a class="btn" href="./expenses/{{ this._id }}/edit">edit</a>
-            <form action="./expenses/{{ this._id }}?_method=DELETE" method="POST">
-              <button class=" btn btn-link" type="submit">delete</button>
-            </form>
+            <h4 class="col-auto" style="display: inline; vertical-align: middle; color: #566270;">{{ this.amount }}</h3>
+              <a class=" btn btn-link" href="./expenses/{{ this._id }}/edit">edit</a>
+              <form action="./expenses/{{ this._id }}?_method=DELETE" method="POST">
+                <button class=" btn btn-link" type="submit">delete</button>
+              </form>
           </div>
       </li>
       {{/each}}
