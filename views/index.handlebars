@@ -20,7 +20,7 @@
       {{#each records}}
       <li class="list-group-item">
         <div class="row">
-          <div class="col-1"><i class='{{ this.categoryIcon }}' style="color: #9055A2;"></i>
+          <div class="col-1 mr-1"><i class='{{ this.categoryIcon }} fa-2x' style="color: #9055A2;"></i>
           </div>
           <div class="col-auto">
             <h3 class="mr-1" style="display: inline; vertical-align: middle; color: #566270;">{{ this.name }}</h4>
@@ -29,9 +29,9 @@
           <div class="col-auto ml-auto row">
             <h4 class="col-auto" style="display: inline; vertical-align: middle; color: #566270;">
               {{ this.amount }}</h3>
-              <a class=" btn btn-link" href="./expenses/{{ this._id }}/edit">edit</a>
+              <a class=" btn btn-outline-success mr-1" href="./expenses/{{ this._id }}/edit">edit</a>
               <form action="./expenses/{{ this._id }}?_method=DELETE" method="POST">
-                <button class=" btn btn-link" type="submit">delete</button>
+                <button class=" btn btn-outline-danger" type="submit">delete</button>
               </form>
           </div>
       </li>
