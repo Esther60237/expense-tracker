@@ -1,0 +1,39 @@
+<div class="container col-6">
+  <form>
+    <div class="form-group">
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>類別</option>
+        <option>家居物業</option>
+        <option>交通出行</option>
+        <option>休閒娛樂</option>
+        <option>餐飲食品</option>
+        <option>其他</option>
+      </select>
+    </div>
+  </form>
+  <div class="row mb-3">
+    <h5 class="col-auto mr-auto">Total</h5>
+    <h1 class="col-auto totalAmount">{{{totalAmount}}}</h1>
+  </div>
+  <div class="content mb-3">
+    <ul class="list-group">
+      {{#each records}}
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-auto"><i class='{{ this.categoryIcon }}'></i>
+          </div>
+          <div class="col-auto">
+            <h4 style="display: inline; vertical-align: middle;">{{ this.name }}</h4>
+          </div>
+          <div class="col-auto ml-auto row">
+            <h3 class="col-auto">{{ this.amount }}</h3>
+            <a class="btn" href="/expenses/{{ this._id }}/edit">edit</a>
+            <form action="">
+              <button class="btn btn-link" type="submit">delete</button>
+            </form>
+          </div>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

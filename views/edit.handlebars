@@ -1,0 +1,39 @@
+<div class="container col-6 mt-3">
+  <form action="/expenses/{{record._id}}?_method=PUT" method="POST">
+    <div class="form-group row mb-6">
+      <label class="col-sm-2 col-form-label">名稱</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control col-form-label" name="name" value="{{record.name}}">
+      </div>
+    </div>
+    <div class="form-group row mb-6">
+      <label class="col-sm-2 col-form-label">日期</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control col-form-label" name="date" value="{{record.date}}" required>
+      </div>
+    </div>
+    <div class="form-group row mb-6">
+      <label class="col-sm-2 col-form-label">類別</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="exampleFormControlSelect1" name="category" selected="{{record.category}}"
+          required>
+          <option value="Select">Select</option>
+          <option value="家居物業">家居物業</option>
+          <option value="交通出行">交通出行</option>
+          <option value="休閒娛樂">休閒娛樂</option>
+          <option value="餐飲食品">餐飲食品</option>
+          <option value="其他">其他</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">金額</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control col-form-label" name="amount" value="{{record.amount}}">
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mb-6">
+      <button class="btn btn-info" type="submit">Create</button>
+    </div>
+  </form>
+</div>
