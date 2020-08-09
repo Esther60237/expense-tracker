@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const numeral = require('numeral')
 const Record = require('../../models/record')
 const Category = require('../../models/category')
 
@@ -31,6 +30,17 @@ router.get('/:id/edit', (req, res) => {
     .then(record => {
       res.render('edit', { record })
     })
+})
+
+router.put('/:id', (req, res) => {
+  const id = req.params.id
+  return Record.findById(id)
+    .then(record => {
+      record = Object.assign(record, req.body)
+      return record.save()
+    })
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
 })
 
 // Delete
