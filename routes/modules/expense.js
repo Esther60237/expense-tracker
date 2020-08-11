@@ -37,8 +37,14 @@ router.put('/:id', (req, res) => {
   const id = req.params.id
   return Record.findById(id)
     .then(record => {
-      record = Object.assign(record, req.body)
-      return record.save()
+
+      Category.find({ categoryName: `${req.body.category}` })
+        .then(categories => {
+          record = Object.assign(record, req.body)
+          record.categoryIcon = `${categories[0].categoryIcon}`
+          return record.save()
+        })
+        .catch(error => console.log(error))
     })
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
