@@ -37,7 +37,6 @@ router.put('/:id', (req, res) => {
   const id = req.params.id
   return Record.findById(id)
     .then(record => {
-
       Category.find({ categoryName: `${req.body.category}` })
         .then(categories => {
           record = Object.assign(record, req.body)
